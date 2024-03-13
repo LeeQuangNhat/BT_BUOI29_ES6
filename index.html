@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- FontAwesome 6.2.0 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="./asset/css/style.css" />
+</head>
+
+<body>
+  <header class="text-bg-dark text-center">
+    <div class="container">
+      <h2 class="p-4 mb-0">Quản lý học viện nghiên cứu & giảng dạy</h2>
+    </div>
+  </header>
+  <section class="adduser mt-5 mb-4">
+    <div class="container">
+      <div class="d-flex  nav_user">
+        <div class="button_add">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Thêm người dùng
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header align-items-center px-5">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Thêm người dùng
+                  </h1>
+                  <button type="button" class="text-bg-danger close" data-bs-dismiss="modal" aria-label="Close">
+                    x
+                  </button>
+                </div>
+                <div class="modal-body px-5">
+                  <form action="" id="formUser">
+                    <section class="account">
+                      <div class="mb-4">
+                        <label for="" class="form-label">Mã số:</label>
+                        <input type="text" class="form-control" name="" id="id" aria-describedby="helpId"
+                          placeholder="Mã số" />
+                      </div>
+                      <p class="sp-thongbao text-danger fw-bold" id="tbId"></p>
+
+                      <div class="mb-4">
+                        <label for="" class="form-label">Họ và tên:</label>
+                        <input type="name" class="form-control" name="" id="name" aria-describedby="helpId"
+                          placeholder="Họ và tên" />
+                      </div>
+                      <p class="sp-thongbao text-danger fw-bold" id="tbName"></p>
+                      <div class="mb-4">
+                        <label for="" class="form-label">Email:</label>
+                        <input type="email" class="form-control" name="" id="email" aria-describedby="helpId"
+                          placeholder="Email" />
+                      </div>
+                      <p class="sp-thongbao text-danger fw-bold" id="tbEmail"></p>
+                      <div class="mb-4">
+                        <label for="" class="form-label">Địa chỉ:</label>
+                        <input type="text" class="form-control" name="" id="address" aria-describedby="helpId"
+                          placeholder="Địa chỉ" />
+                      </div>
+                      <p class="sp-thongbao text-danger fw-bold" id="tbAddress"></p>
+
+                      <div class="mb-4">
+                        <label for="" class="form-label">Người dùng:</label>
+                        <select class="form-select" name="" id="DoiTuong" onchange="showDoiTuong()">
+                          <option selected>Người dùng</option>
+                          <option value="Sinh viên" name="sinhVien">
+                            Sinh viên
+                          </option>
+                          <option value="Nhân viên" name="nhanVien">
+                            Nhân viên
+                          </option>
+                          <option value="Khách hàng" name="khachHang">
+                            Khách hàng
+                          </option>
+                        </select>
+                      </div>
+                      <p class="sp-thongbao text-danger fw-bold" id="tbDoiTuong"></p>
+                      <div id="sinhVien" style="display: none">
+                        <div class="mb-4">
+                          <label for="diemToan" class="form-label">Toán:</label>
+                          <input type="text" class="form-control" id="diemToan" name="" placeholder="Điểm Toán" />
+                        </div>
+                        <p class="sp-thongbao text-danger fw-bold" id="tbDiemToan"></p>
+                        <div class="mb-4">
+                          <label for="diemLy" class="form-label">Lý:</label>
+                          <input type="text" class="form-control" id="diemLy" name="" placeholder="Điểm Lý" />
+                        </div>
+                        <p class="sp-thongbao text-danger fw-bold" id="tbDiemLy"></p>
+                        <div class="mb-4">
+                          <label for="diemHoa" class="form-label">Hóa:</label>
+                          <input type="text" class="form-control" id="diemHoa" name="" placeholder="Điểm Hóa" />
+                        </div>
+                        <p class="sp-thongbao text-danger fw-bold" id="tbDiemHoa"></p>
+                      </div>
+                      <div id="nhanVien" style="display: none">
+                        <div class="mb-4">
+                          <label for="soNgayLamViec" class="form-label">Số ngày làm việc:</label>
+                          <input type="text" class="form-control" id="soNgayLamViec" name=""
+                            placeholder="Số ngày làm việc" />
+                        </div>
+                        <p class="sp-thongbao text-danger fw-bold" id="tbSoNgayLamViec"></p>
+                        <div class="mb-4">
+                          <label for="luongTheoNgay" class="form-label">Lương theo ngày:</label>
+                          <input type="text" class="form-control" id="luongTheoNgay" name=""
+                            placeholder="Lương theo ngày" />
+                        </div>
+                        <p class="sp-thongbao text-danger fw-bold" id="tbLuongTheoNgay"></p>
+                      </div>
+                      <div id="khachHang" style="display: none">
+                        <div class="mb-4">
+                          <label for="tenCongTy" class="form-label">Tên công ty:</label>
+                          <input type="text" class="form-control" id="tenCongTy" name="" placeholder="Tên công ty" />
+                        </div>
+                        <p class="sp-thongbao text-danger fw-bold" id="tbTenCongTy"></p>
+                        <div class="mb-4">
+                          <label for="triGiaHoaDon" class="form-label">Trị giá hóa đơn:</label>
+                          <input type="text" class="form-control" id="triGiaHoaDon" name=""
+                            placeholder="Trị giá hóa đơn" />
+                        </div>
+                        <p class="sp-thongbao text-danger fw-bold" id="tbTriGiaHoaDon"></p>
+                        <div class="mb-4">
+                          <label for="danhGia" class="form-label">Đánh giá</label>
+                          <textarea class="form-control" id="danhGia" rows="3"></textarea>
+                        </div>
+                      </div>
+                    </section>
+                  </form>
+                </div>
+                <div class="modal-footer px-5">
+                  <!-- <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button> -->
+                  <button type="button" class="btn btn-dark btn_submit btn_adduser">
+                    Thêm
+                  </button>
+                  <button type="button" class="btn btn-dark btn_update tex">
+                    Cập nhật
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button_search d-flex ">
+          <div class="me-3">
+            <input type="text" class="form-control" name="" id="txtSearch" aria-describedby="helpId"
+              placeholder="Tìm kiếm theo tên" />
+          </div>
+          <div class="ms-3">
+            <select class="form-select" name="" id="filter">
+              <option selected>All</option>
+              <option value="Sinh viên">Sinh viên</option>
+              <option value="Nhân viên">Nhân viên</option>
+              <option value="Khách hàng">Khách hàng</option>
+            </select>
+          </div>
+        </div>
+        <div class="button_arrange">
+          <select class="form-select" name="" id="txtSort">
+            <option selected>Sắp xếp danh sách theo thứ tự họ và tên</option>
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="info mb-5 ">
+    <div class="container">
+      <div class="display_full">
+        <table>
+          <thead>
+            <tr class="text-bg-dark">
+              <th style="border-top-left-radius: 8px">Mã số</th>
+              <th>Tên</th>
+              <th>Địa chỉ</th>
+              <th>Email</th>
+              <th>Người dùng</th>
+              <th>Thông tin</th>
+              <th style="border-top-right-radius: 8px">
+                <i class="fa-solid fa-gear"></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="display_responsive">
+        <table>
+          <thead>
+            <tr class="text-bg-dark">
+              <th style="border-top-left-radius: 8px">Mã số</th>
+              <th>Thông tin</th>
+              <th style="border-top-right-radius: 8px">
+                <i class="fa-solid fa-gear"></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <footer class="text-bg-dark text-center w-100 " >
+    <div class="container">
+      <p class="p-4 mb-0">
+        &copy; 2024 Quản lý Học viện nghiên cứu & giảng dạy
+      </p>
+    </div>
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./js/validation.js"></script>
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

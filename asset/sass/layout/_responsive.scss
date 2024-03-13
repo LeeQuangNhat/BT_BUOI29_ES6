@@ -1,0 +1,34 @@
+@media only screen and (min-width: 992px) {
+    .info{
+        .display_full{
+            display: block;
+        }
+        .display_responsive{
+            display: none;
+        }
+    }
+    .adduser{
+        .nav_user{
+            justify-content: space-between;
+        }
+    }
+}
+@media only screen and (max-width: 992px) {
+    .info{
+        .display_full{
+            display: none;
+        }
+        .display_responsive{
+            display: block;
+        }
+    }
+    .adduser{
+        .nav_user{
+            flex-direction: column;
+            justify-content: flex-start;
+            .button_search{
+                margin: 15px 0; 
+            }
+        }
+    }
+}
